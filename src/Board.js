@@ -2,15 +2,13 @@ import React from 'react';
 import Cell from './Cell';
 
 
-const Board = ({board, onClick}) => {
-
-    let counter = 0;
-    const cells = board.map(value => {
+const Board = ({ board, onClick }) => {
+    const cells = board.map((value, index) => {
         return (
             <Cell
-                location={counter++}
+                location={index}
                 value={value}
-                key={counter - 1}
+                key={index}
                 onClick={onClick}
             />
         )
